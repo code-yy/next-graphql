@@ -4,6 +4,10 @@ import Head from "next/head";
 import { ReactElement, ReactNode } from "react";
 import "tailwindcss/tailwind.css";
 
+// apollo-client
+import { ApolloProvider } from "@apollo/client";
+import { client } from "src/components/apollo/apollo-client";
+
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -20,7 +24,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       <Head>
         <title>next-tailwind</title>
       </Head>
-      {getLayout(<Component {...pageProps} />)}
+      <ApolloProvider client={client}>{getLayout(<Component {...pageProps} />)}</ApolloProvider>
     </>
   );
 };

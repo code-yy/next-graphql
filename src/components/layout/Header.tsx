@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const items = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/server-side", label: "server-side" },
+  { href: "/client-side", label: "client-side" },
 ];
 
 export const Header: VFC = () => {
